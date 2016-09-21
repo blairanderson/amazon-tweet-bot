@@ -1,5 +1,7 @@
 # Amazon Tweet Bot
 
+[![Build Status](https://travis-ci.org/johnfoderaro/amazon-tweet-bot.svg?branch=master)](https://travis-ci.org/johnfoderaro/amazon-tweet-bot)
+
 Amazon Tweet Bot is a Node.js module that allows for easily sharing a random tweet containing an Amazon product advertising link.
 
 This module is essentially a wrapper around [Twit](https://github.com/ttezel/twit) and [Apac](https://github.com/dmcquay/node-apac), offering a streamlined API that helps bridge the gap between these two modules, all while hopefully helping the end user make some affiliate cash in the process! 😎 🍻
