@@ -1,0 +1,29 @@
+{
+  "name": "amazon-tweet-bot",
+  "version": "0.1.0",
+  "description": "A Node.js Twitter Bot to easily tweet random Amazon product advertising links",
+  "main": " ",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnfoderaro/amazon-tweet-bot"
+  },
+  "keywords": [
+
+  ],
+  "author": "John Foderaro <johnfoderaro@icloud.com>",
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "dependencies": {
+    "apac": "^2.0.2",
+    "daychange": "^1.0.3",
+    "make-random": "^0.1.2",
+    "twit": "^2.2.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
