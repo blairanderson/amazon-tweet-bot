@@ -21,7 +21,7 @@ npm install amazon-tweet-bot
 
 const AmazonTweetBot = require('amazon-tweet-bot');
 
-const amazonTweetBot = new AmazonTweetBot({
+const bookBot = new AmazonTweetBot({
   amazon: {
     keys: {
       awsId:     'YOUR AMAZON AWSID HERE',
@@ -52,9 +52,7 @@ const amazonTweetBot = new AmazonTweetBot({
   }
 });
 
-amazonTweetBot.tweetRandomLink((result) => {
-  console.log(result);
-});
+bookBot.tweetRandomLink(result => console.log(result));
 
 ```
 
