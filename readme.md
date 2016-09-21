@@ -56,7 +56,66 @@ bookBot.tweetRandomLink(result => console.log(result));
 
 ```
 
+The above example would then tweet and log something like this:
+
+```shell
+Sun Sep 18 23:37:20 +0000 2016: Check out this latest book "Title of product" http://amazon.com/product-link \#books
+```
+
 ## Usage
+
+### `const bookBot = new AmazonTweetBot(options)`
+
+Creates an instance of `AmazonTweetBot`. This requires an options object consisting of several required key/value pairs, adhering to the following format:
+
+#### `options.amazon.keys`
+```javascript
+{
+  awsId:     'YOUR AMAZON AWSID HERE',
+  awsSecret: 'YOUR AMAZON AWSSECRET HERE',
+  assocId:   'YOUR AMAZON ASSOCID HERE'
+}
+```
+
+#### `options.amazon.search`
+```javascript
+{
+  query: {
+    'SearchIndex': 'Books',
+    'Keywords': 'best sellers',
+    'ResponseGroup': 'ItemAttributes,Offers'
+  },
+  operation: 'ItemSearch',
+  daysBack: 365 // optional
+}
+```
+
+The values for `query` and `operation` must adhere to Amazon's Product Advertising API's guidelines, available [here](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_ApiReference.html).
+
+As an optional parameter, `daysBack` currently only deals with the "publication date" value returned from Amazon's Product Advertising API. It allows you for greater filtering flexibility.
+
+#### `options.twitter.keys`
+```javascript
+{
+  consumer_key:        'YOUR TWITTER CONSUMER KEY HERE',
+  consumer_secret:     'YOUR TWITTER CONSUMER SECRET HERE',
+  access_token:        'YOUR TWITTER ACCESS TOKEN HERE',
+  access_token_secret: 'YOUR ACCESS TOKEN SECRET HERE'
+}
+```
+
+#### `options.twitter.tweet`
+```javascript
+{
+  prepend: 'Check out this latest book!',
+  append: '#books'
+}
+```
+The properties and values for `tweet` are optional, as is `tweet` itself. These parameters allow for appending or prepending text before or after the standard "title + link" tweet that this module provides.
+
+### `bookBot.tweetRandomLink(callback)`
+
+The only method of `AmazonTweetBot` is `tweetRandomLink`, which then handles taking all of the above options, making the call to Amazon, receiving 10 results form a randomly chosen page (ranging from 1 through 10, see Amazon's Product Advertising API docs for more information on this limitation), and choosing randomly from that results array, ranging from 0 to 9, the item's title and link. Once that item is chosen, it is then tweeted, appending or prepending text to the tweet accordingly, following a "text + link" format. The callback function then returns the result, whether it be an error or success.
 
 ## License
 
