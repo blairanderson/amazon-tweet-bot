@@ -58,8 +58,8 @@ bookBot.tweetRandomLink(result => console.log(result));
 
 The above example would then tweet and log something like this:
 
-```shell
-Sun Sep 18 23:37:20 +0000 2016: Check out this latest book "Title of product" http://amazon.com/product-link \#books
+```text
+Sun Sep 18 23:37:20 +0000 2016: Check out this latest book "Title of product" http://amazon.com/product-link #books
 ```
 
 ## Usage
