@@ -107,8 +107,8 @@ As an optional parameter, `daysBack` currently only deals with the "publication 
 #### `options.twitter.tweet`
 ```javascript
 {
-  prepend: 'Check out this latest book!',
-  append: '#books'
+  prepend: 'Check out this latest book!', //optional
+  append: '#books' // optional
 }
 ```
 The properties and values for `tweet` are optional, as is `tweet` itself. These parameters allow for appending or prepending text before or after the standard "title + link" tweet that this module provides.
