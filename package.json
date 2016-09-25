@@ -1,6 +1,6 @@
 {
   "name": "amazon-tweet-bot",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "💰Twitter Bot to easily tweet random Amazon product advertising links",
   "main": "lib/amazon-tweet-bot.js",
   "scripts": {
@@ -22,8 +22,8 @@
   "readmeFilename": "readme.md",
   "dependencies": {
     "apac": "^2.0.2",
-    "daychange": "^1.0.3",
-    "make-random": "^0.1.2",
+    "daychange": "^1.0.4",
+    "make-random": "^0.1.4",
     "twit": "^2.2.4"
   },
   "devDependencies": {
