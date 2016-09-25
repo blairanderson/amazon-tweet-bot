@@ -6,6 +6,7 @@ const expect = chai.expect;
 const AmazonTweetBot = require('../lib/amazon-tweet-bot');
 const TwitStub = require('./stubs/twit-stub');
 const ApacStub = require('./stubs/apac-stub');
+const ApacStubNoData = require('./stubs/apac-stub-no-data');
 
 const options = {
   amazon: {
@@ -45,7 +46,26 @@ describe('AmazonTwitterBot tweetRandomLink method', () => {
     let result;
     testBot.amazon = new ApacStub(options);
     testBot.twitter = new TwitStub(options);
-    testBot.tweetRandomLink(data => result = data);
+    testBot.tweetRandomLink((error, data) => {
+      if (error) {
+        result = error;
+      } else {
+        result = data;
+      }
+    });
     expect(result).to.be.a('string');
+  });
+  it(`Should return an error`, () => {
+    let result;
+    testBot.amazon = new ApacStubNoData(options);
+    testBot.twitter = new TwitStub(options);
+    testBot.tweetRandomLink((error, data) => {
+      if (error) {
+        result = error;
+      } else {
+        result = data;
+      }
+    });
+    expect(result).to.be.an('error');
   });
 });

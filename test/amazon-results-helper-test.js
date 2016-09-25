@@ -80,9 +80,6 @@ describe(`amazonResultsHelper function`, () => {
   it(`Should return an array length equal to results.length`, () => {
     expect(amazonResultsHelper('2015-12-31', testResults).length).to.equal(testResults.ItemSearchResponse.Items.Item.length);
   });
-  it(`Should return an error`, () => {
-    expect(amazonResultsHelper('2016-01-02', testResults)).to.be.an('error');
-  });
   it(`Should return an array of objects with properties 'date', 'title, 'link'`, () => {
     expect(amazonResultsHelper('2015-12-31', testResults)[0]).to.have.property('date');
     expect(amazonResultsHelper('2015-12-31', testResults)[0]).to.have.property('title');

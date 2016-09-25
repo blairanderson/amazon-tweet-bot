@@ -15,16 +15,6 @@ class ApacStub {
         }
       }
     };
-    let itemsArray = resultObject.ItemSearchResponse.Items.Item;
-    for (let i = 0; itemsArray.length < 10; i++) {
-      itemsArray.push({
-        ItemAttributes: {
-          Title: `Title ${i}`,
-          PublicationDate: `2016-01-01`
-        },
-        DetailPageURL: `URL ${i}`
-      });
-    }
     callback(error, resultObject);
   }
 }
