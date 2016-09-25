@@ -52,8 +52,13 @@ const bookBot = new AmazonTweetBot({
   }
 });
 
-bookBot.tweetRandomLink(result => console.log(result));
-
+bookBot.tweetRandomLink((error, result) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(result);
+  }
+}
 ```
 
 The above example would then tweet and log something like this:
