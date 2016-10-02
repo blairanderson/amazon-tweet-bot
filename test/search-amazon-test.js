@@ -43,12 +43,16 @@ const search = options.amazon.search;
 describe(`searchAmazon function`, () => {
   it(`Should return an object`, () => {
     let result;
-    searchAmazon(amazon, search, data => result = data);
+    searchAmazon(amazon, search, (error, data) => {
+      result = data;
+    });
     expect(result).to.be.an('object');
   });
   it(`Should return an object with properties 'date', 'title, 'link'`, () => {
     let result;
-    searchAmazon(amazon, search, data => result = data);
+    searchAmazon(amazon, search, (error, data) => {
+      result = data;
+    });
     expect(result).to.have.property('date');
     expect(result).to.have.property('title');
     expect(result).to.have.property('link');
