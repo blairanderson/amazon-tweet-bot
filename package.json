@@ -1,7 +1,8 @@
 {
   "name": "amazon-tweet-bot",
-  "version": "0.1.5",
-  "description": "💰Twitter Bot to easily tweet random Amazon product advertising links",
+  "version": "0.1.6",
+  "description":
+    "💰Twitter Bot to easily tweet random Amazon product advertising links",
   "main": "lib/amazon-tweet-bot.js",
   "scripts": {
     "test": "mocha"
